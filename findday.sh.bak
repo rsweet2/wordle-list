@@ -1,0 +1,9 @@
+#!/bin/bash
+grep -n "$1" solution-words-in-order-spoilers | cut -f1 -d:
+
+if sed -n "$1p" solution-words-in-order-spoilers | grep -q '\(.\).*\1' ; 
+then  
+  echo "YES Duplicate Letters" ;
+else 
+  echo "NO Duplicate Letters" ;  
+fi
